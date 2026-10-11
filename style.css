@@ -1,0 +1,187 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 18px;
+  background: #11182b;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+
+.game-shell {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.topbar, .world-info, .stats, .controls,
+.control-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topbar h1 {
+  margin: 0;
+  color: #b9f5ad;
+  font-size: clamp(20px, 4vw, 32px);
+}
+
+.topbar p, .instructions {
+  color: #b8c3dc;
+  font-size: 13px;
+}
+
+.stats {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.stats span, .world-info {
+  background: #26314b;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 14px;
+  background: #b8f28b;
+  color: #172036;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.world-info {
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.canvas-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #465777;
+  border-radius: 14px;
+  background: #17233b;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.message {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 9px 14px;
+  border-radius: 20px;
+  background: #11182bdc;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.shop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(330px, 90%);
+  padding: 22px;
+  border: 2px solid #b9f5ad;
+  border-radius: 16px;
+  background: #19233df5;
+  box-shadow: 0 12px 50px #0009;
+}
+
+.shop h2 {
+  margin: 0 0 8px;
+  color: #b9f5ad;
+}
+
+.shop p {
+  font-size: 13px;
+  color: #d4dbed;
+}
+
+.shop button:not(.close) {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.shop .close {
+  float: right;
+  padding: 5px 9px;
+  background: #45516b;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.controls {
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  justify-content: flex-start;
+}
+
+.control-group button {
+  min-width: 48px;
+  min-height: 44px;
+}
+
+.instructions {
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 9px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats {
+    justify-content: flex-start;
+  }
+
+  .world-info {
+    gap: 8px;
+  }
+
+  .control-group {
+    flex: 1;
+    gap: 6px;
+  }
+
+  .control-group button {
+    padding: 12px 9px;
+  }
+}
